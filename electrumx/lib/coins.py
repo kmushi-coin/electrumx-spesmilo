@@ -4074,3 +4074,20 @@ class Lbry(Coin):
     TX_PER_BLOCK = 43
     RPC_PORT = 9245
     REORG_LIMIT = 5000
+
+class KmushiCoin(ScryptMixin, Coin):
+    NAME = "KmushiCoin"
+    SHORTNAME = "KTV"
+    NET = "mainnet"
+    P2PKH_VERBYTE = bytes.fromhex("2e")
+    P2SH_VERBYTES = [bytes.fromhex("55")]
+    WIF_BYTE = bytes.fromhex("ae")
+    GENESIS_HASH = ('000007f0db3384e2e98b6904ebd55c41'
+                    '2b76a688628f18e8af19e5dcf75a984b')
+    PEERS = []
+    DAEMON = daemon.LegacyRPCDaemon
+    RPC_PORT = 36600
+    TX_COUNT = 1
+    TX_COUNT_HEIGHT = 1
+    TX_PER_BLOCK = 3
+    REORG_LIMIT = 800
